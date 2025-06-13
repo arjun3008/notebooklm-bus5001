@@ -1,0 +1,68 @@
+The provided documents cover key concepts in cloud architectures and cloud adoption, specifically focusing on the BUS5001 – Cloud Platforms and Analytics course.
+
+**Cloud Architectures (Week 02 Recap)**
+The cloud is defined by its essential characteristics and benefits, including various service and deployment models. Key technologies enabling the cloud include broadband networks and the Internet architecture. The Internet architecture is structured in tiers: Tier 1 providers are large regional or national networks, Tier 2 providers connect with Tier 1 and Tier 3, and Tier 3 providers strictly purchase Internet transit. The Internet is decentralised, with connectivity achieved through common protocols and standards. In cloud deployments, the Internet serves as a connecting medium for cloud service users, external end users, and cloud providers, extending the trust boundary.
+
+**Network Performance and Infrastructure**
+Network bandwidth, latency, loss, and jitter are crucial aspects of network quality of service (QoS).
+*   **Bandwidth** refers to the speed of a link, which QoS can manage by assigning amounts to different traffic types.
+*   **Delay (Latency)** is the time a packet takes to travel from source to destination, often affected by queuing during congestion. More network nodes (hops) typically increase latency and degrade service.
+*   **Loss** refers to data lost due to packet loss, usually from network congestion, where QoS enables decisions on which packets to drop.
+*   **Jitter** is the irregular speed of packets, causing distortion or gaps in audio and video.
+Service levels across cloud providers and carriers are also addressed through QoS.
+
+Data centres are centralised physical facilities housing IT equipment. They can be enterprise (single organisation use), colocation (rental space), managed service (third-party services), or cloud data centres (distributed, often managed by third parties). These facilities require significant infrastructure, including power, cooling, fire suppression, and external network connections.
+
+**Virtualisation and Scaling Technologies**
+**Virtualisation** converts physical resources into virtual ones, such as desktops, servers, storage, and networks. **Hypervisors** facilitate virtualisation:
+*   **Type 1 (Bare-Metal) Hypervisors** run directly on the host hardware (e.g., VMware ESXi, Microsoft Hyper-V).
+*   **Type 2 (Hosted) Hypervisors** run on top of an existing operating system (e.g., Oracle VirtualBox, VMware Workstation).
+
+**Load balancing** is a technique for workload distribution that enables service scaling by creating redundant deployments managed by a load balancing system. **Scaling** refers to a provider's ability to handle fluctuating loads, with two main types:
+*   **Horizontal Scaling** (scaling out and in) involves adding or removing nodes, generally less expensive, automatable, but requires more complex maintenance.
+*   **Vertical Scaling** (scaling up and down) increases the power of existing resources (e.g., CPU, RAM), often requiring specialised hardware, having maximum capacity restrictions, and higher downtime possibilities.
+
+**Containerisation** is an operating system-level virtualisation technology for deploying applications without needing a virtual server for each solution. It offers portability, better hardware utilisation, agility (integration with DevOps, version tracking), faster delivery of enhancements (microservices), and flexibility. Key components include a container engine, container build file, container image, the container itself, networking address, and storage.
+
+**Core Cloud Concepts**
+Web technologies (URL, HTTP, HTML, REST, JSON, XML) are fundamental for cloud service implementations and management front-ends. **Multi-tenancy** allows multiple users to access the same application simultaneously, each with an isolated view. Features of multi-tenancy include isolation, availability, scalability, reduced costs (due to shared resources), and customisability for individual tenants.
+
+**Benefits and Challenges of Cloud Adoption**
+Cloud adoption offers several benefits:
+*   **Reduced Cost:** Lower upfront IT investments (CAPEX), measured usage (OPEX), pooled resources, and optimised architectures reduce operational inefficiencies.
+*   **Ready-Made Services:** Availability of pre-built services for organisational use.
+*   **Increased Scale:** Ability to align infrastructure with demand fluctuations and fulfill unpredictable needs.
+*   **Increased Availability/Reliability:** Guaranteed Service Level Agreements (SLAs), recovery from exceptional conditions, failover support, and High Availability Disaster Recovery (HADR).
+
+However, cloud adoption also presents challenges:
+*   **Security Vulnerabilities:** Increased risk due to overlapping trust boundaries, hardware vulnerabilities (e.g., Meltdown/Spectre), and differing security architectures.
+*   **Operational Governance Control:** Reliability dependent on SLAs, QoS issues over distance, and the need for a framework to measure consumer-level SLAs with legal contracts.
+*   **Limited Portability:** Lack of established standards means significant development effort is needed to port solutions between different cloud providers.
+*   **Multi-Region Issues:** Legal and compliance concerns, particularly regarding data movement and processing (e.g., GDPR).
+
+**DevOps and Application Modernisation**
+**DevOps** integrates development (design, develop, deliver, run) and operations (monitor, detect/predict failure, manage, fix bugs) teams. It applies agile and lean principles across all stakeholders, leading to short iterations, continuous delivery, rapid cycles for new features and bug fixes, increased business agility, and faster customer feedback integration. Application modernisation involves evolving from monolithic to service-oriented architectures and microservices, and from physical servers to virtual machines and cloud infrastructure, mirroring a shift from Waterfall to Agile/Scrum and DevOps delivery models.
+
+**Microsoft Azure**
+Microsoft Azure is a cloud computing platform offering over 200 products and services, such as Azure Virtual Machines, Azure Web Apps, Azure Storage, Azure SQL Database, and Azure Cognitive Services. Azure was first announced as "Windows Azure" in October 2008 (code-named "Project Red Dog") as a cloud operating system to compete with Amazon EC2 and Google App Engine. It was built as an extension of Windows NT, beginning as a Platform as a Service (PaaS). Notable milestones include its commercial launch in 2010, the introduction of Azure Virtual Machines in 2012, rebranding as Microsoft Azure in 2014, and various service additions, acquisitions (LinkedIn), and major contracts (JEDI for US DoD). Azure currently has over 1.3 million active customers, hosting over 2 trillion messages per week.
+
+Azure resources are structured within **Subscriptions**, which are logical containers for resources and the first step in adopting Azure. **Resource Groups** are logical containers holding related resources for management as a single entity based on lifecycle and security. An **Azure Resource** is any entity managed by Azure, such as virtual machines or storage accounts.
+
+**Cloud Adoption Framework (CAF)**
+A Cloud Adoption Framework (CAF) is a collection of processes, tools, and best practices guiding a business's cloud journey. Cloud providers like AWS, GCP, and Azure have their own CAFs, all addressing fundamental questions of "Why?", "What?", "How?", "At what cost?", "Whom", and "When".
+
+The **Azure CAF** outlines several phases:
+1.  **Establish Strategy:** Involves aligning technology projects with desired business outcomes. This includes defining motivations (e.g., migration, innovation), documenting specific business outcomes (e.g., data innovation, agility, fiscal outcomes, sustainability), and evaluating the business case by understanding financial and technical considerations. Key business drivers include capacity management (Lead, Lag, Match strategies), cost reduction (TCO), organisational agility, and assurance. Identifying the first application to migrate, based on business and technical criteria, is also part of this phase.
+2.  **Plan:** Focuses on rationalising the digital estate (inventory, quantitative, and qualitative analysis) to maximise return and minimise risk. This phase culminates in creating a cloud adoption plan with transformation goals, objective metrics, and a financial model.
+3.  **Ready:** Defines skills and organisational readiness, addressing gaps in people and culture, adjusting processes, and ensuring IT and business teams are prepared for change. It also involves defining support needs and creating a "landing zone" where applications will reside.
+4.  **Adopt:** This phase involves **cloud migration**, which is the process of moving existing digital assets to a cloud platform, typically involving "Migrate" and "Modernise" strategies. Five common cloud migration strategies are:
+    *   **Rehost (lift and shift):** Moving an application to a new hardware environment without architectural changes.
+    *   **Refactor (PaaS):** Running apps on a cloud provider's infrastructure, reusing existing code, frameworks, and languages.
+    *   **Revise:** Modifying or extending existing code before rehosting or refactoring.
+    *   **Rebuild:** Discarding existing code and rearchitecting the application from scratch.
+    *   **Replace (SaaS):** Discarding an existing application and adopting commercial software as a service.
+    Preparation for adoption involves considering business outcomes, digital estate estimates, defining roles and responsibilities, and change management.
+5.  **Govern:** Involves setting "guard rails" through policies and procedures. This phase balances stability and operations, focusing on cost management, monitoring, security baselines, resource consistency, identity baselines, deployment acceleration, and DevOps practices.
+
+**Cloud Adoption Anti-Patterns**
+The documents also highlight common pitfalls or "anti-patterns" in cloud adoption, such as inadequate or misaligned motivation, choosing the wrong cloud operating or service model, replacing rather than modernising architecture, using preview services in production, inaccurate resiliency assumptions, IT acting as a cloud provider, lack of guardrails or assessments, forced architecture, using a single subscription, neglecting business outcomes (focusing on tooling), misunderstanding shared responsibilities, inaccurate out-of-the-box security assumptions, using custom compliance frameworks, treating IT as a cost center, developing platforms without business approval, outsourcing core business functions, and hiring technical decision makers instead of developing cloud engineers.
