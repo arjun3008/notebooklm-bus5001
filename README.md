@@ -7,9 +7,9 @@
 5. Citation highlighting
 
 ## Included Files
-- 1_summary.png
-- 2_QA.png
-- 3_notes.png
-- 4_notebook_view.png
-- 5_citations.png
+- Summarization.png
+- Q&A.png
+- ChatSources.png
+- Sources.png
+- Creation of Notes.png
 - summary.txt (or NotebookLM_summary.pdf)
